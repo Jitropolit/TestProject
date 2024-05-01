@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="KeyResource" load_steps=3 format=3 uid="uid://bqlhafwsttddk"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Items/key_resource.gd" id="1_5al46"]
+[ext_resource type="Texture2D" uid="uid://bsviw2p70atcl" path="res://Assets/Objects/Items/keys.png" id="2_uus28"]
+
+[resource]
+script = ExtResource("1_5al46")
+name = ""
+description = ""
+usable = false
+effects = {}
+texture = ExtResource("2_uus28")
+hframes = 4
+vframes = 1
+frame = 3
+frame_coords = Vector2i(3, 0)

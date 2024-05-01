@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cex3lm2c5sr30"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Items/item_resource.gd" id="1_6yjtw"]
+[ext_resource type="Texture2D" uid="uid://bxdre6vxxuojs" path="res://Assets/Objects/Items/fruits.png" id="2_ruy78"]
+
+[resource]
+script = ExtResource("1_6yjtw")
+name = "Лемон"
+description = "Не пробуй менять им цвет глаз."
+usable = true
+effects = {
+0: 1,
+1: 1
+}
+texture = ExtResource("2_ruy78")
+hframes = 20
+vframes = 2
+frame = 14
+frame_coords = Vector2i(14, 0)

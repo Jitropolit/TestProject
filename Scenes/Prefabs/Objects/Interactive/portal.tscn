@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0a2mm3mfxvoh"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Interactive/portal_object.gd" id="1_xh6ee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arg7l"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kg4m"]
+size = Vector2(1, 1)
+
+[node name="Portal" type="Node2D"]
+script = ExtResource("1_xh6ee")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 3
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_arg7l")
+
+[node name="EnterArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="EnterArea"]
+shape = SubResource("RectangleShape2D_8kg4m")
+
+[node name="OutArea" type="Area2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="Collision" type="CollisionShape2D" parent="OutArea"]
+shape = SubResource("RectangleShape2D_8kg4m")
+
+[connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]
+[connection signal="body_exited" from="EnterArea" to="." method="_on_enter_area_body_exited"]
+[connection signal="body_entered" from="OutArea" to="." method="_on_out_area_body_entered"]
+[connection signal="body_exited" from="OutArea" to="." method="_on_out_area_body_exited"]

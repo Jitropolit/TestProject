@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PortalResource" load_steps=3 format=3 uid="uid://ci6gj27irrcw4"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Interactive/portal_resource.gd" id="1_u25s2"]
+[ext_resource type="Texture2D" uid="uid://pwg7bd7nnkgf" path="res://Assets/Tiles/town.png" id="2_xmshm"]
+
+[resource]
+script = ExtResource("1_u25s2")
+id_location = 0
+interactive_type = 2
+activated = false
+texture = ExtResource("2_xmshm")
+hframes = 10
+vframes = 3
+frame = 1
+frame_coords = Vector2i(1, 0)
+activated_frame = 2
+activated_frame_coords = Vector2i(2, 0)

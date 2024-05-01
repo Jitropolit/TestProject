@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="TileScenes" load_steps=6 format=3 uid="uid://coj60ua2fanwa"]
+
+[ext_resource type="Script" path="res://Scripts/World/tile_scenes.gd" id="1_mwm24"]
+[ext_resource type="Resource" uid="uid://ci6gj27irrcw4" path="res://Resources/Objects/Interactive/portal.tres" id="2_mjqtp"]
+[ext_resource type="Resource" uid="uid://42wlrp4nb4of" path="res://Resources/Objects/Items/Fruits/kiwi.tres" id="2_tftp4"]
+[ext_resource type="Resource" uid="uid://cex3lm2c5sr30" path="res://Resources/Objects/Items/Fruits/lemon.tres" id="4_v7bta"]
+[ext_resource type="Resource" uid="uid://bqlhafwsttddk" path="res://Resources/Objects/Items/Misc/key.tres" id="5_ww4kp"]
+
+[resource]
+script = ExtResource("1_mwm24")
+tile_scenes = {
+0: {
+Vector2i(1, 0): ExtResource("2_mjqtp"),
+Vector2i(2, 0): ExtResource("2_mjqtp"),
+Vector2i(9, 1): ExtResource("2_mjqtp")
+},
+1: {
+Vector2i(13, 0): ExtResource("2_tftp4"),
+Vector2i(14, 0): ExtResource("4_v7bta")
+},
+2: {
+Vector2i(3, 0): ExtResource("5_ww4kp")
+},
+3: {},
+4: {},
+5: {},
+6: {},
+7: {},
+8: {},
+9: {}
+}

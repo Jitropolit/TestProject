@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://42wlrp4nb4of"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Items/item_resource.gd" id="1_rx2cy"]
+[ext_resource type="Texture2D" uid="uid://bxdre6vxxuojs" path="res://Assets/Objects/Items/fruits.png" id="2_y56bt"]
+
+[resource]
+script = ExtResource("1_rx2cy")
+name = "Киви"
+description = "Лучше есть ложкой."
+usable = true
+effects = {
+0: 1
+}
+texture = ExtResource("2_y56bt")
+hframes = 20
+vframes = 2
+frame = 13
+frame_coords = Vector2i(13, 0)

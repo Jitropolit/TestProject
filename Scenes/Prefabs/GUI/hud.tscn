@@ -1,0 +1,183 @@
+[gd_scene load_steps=8 format=3 uid="uid://crigwx36iy8vt"]
+
+[ext_resource type="FontFile" uid="uid://p6yritn624kl" path="res://Assets/Fonts/better-vcr-5.2.ttf" id="1_ltprh"]
+[ext_resource type="Script" path="res://Scripts/GUI/hud.gd" id="1_ygdrs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b144f"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 0.392157)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p83km"]
+font = ExtResource("1_ltprh")
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yc2y"]
+font = ExtResource("1_ltprh")
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbd2t"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 0.392157)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn4i3"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.392157)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ygdrs")
+
+[node name="StatsPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.135
+anchor_bottom = 0.1
+theme_override_styles/panel = SubResource("StyleBoxFlat_b144f")
+
+[node name="StatsLabel" type="Label" parent="StatsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_p83km")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintPanel" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.95
+anchor_right = 0.7
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b144f")
+
+[node name="HintLabel" type="Label" parent="HintPanel"]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Foo bar"
+label_settings = SubResource("LabelSettings_0yc2y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NotificationPanel" type="Panel" parent="."]
+auto_translate_mode = 1
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.4
+anchor_right = 0.7
+anchor_bottom = 0.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_b144f")
+
+[node name="NotificationLabel" type="Label" parent="NotificationPanel"]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Foo bar"
+label_settings = SubResource("LabelSettings_0yc2y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OkButton" type="Button" parent="NotificationPanel"]
+auto_translate_mode = 1
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.428
+anchor_top = 1.0
+anchor_right = 0.573
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_bottom = 30.0
+focus_mode = 0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_ltprh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rbd2t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dn4i3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b144f")
+text = "Ладно"
+
+[node name="YesButton" type="Button" parent="NotificationPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 1.0
+anchor_right = 0.45
+anchor_bottom = 1.0
+offset_top = 10.0
+focus_mode = 0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_ltprh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rbd2t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dn4i3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b144f")
+text = "Да"
+
+[node name="NoButton" type="Button" parent="NotificationPanel"]
+auto_translate_mode = 1
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 1.0
+anchor_right = 0.7
+anchor_bottom = 1.0
+offset_top = 10.0
+focus_mode = 0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_ltprh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rbd2t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dn4i3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b144f")
+text = "Нет"
+
+[node name="InventoryPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.314
+
+[connection signal="pressed" from="NotificationPanel/OkButton" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="NotificationPanel/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="NotificationPanel/NoButton" to="." method="_on_no_button_pressed"]

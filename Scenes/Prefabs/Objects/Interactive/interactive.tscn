@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch2c34awj6h0r"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Interactive/interactive_object.gd" id="1_qk7ah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kg4m"]
+size = Vector2(1, 1)
+
+[node name="Interactive" type="Node2D"]
+script = ExtResource("1_qk7ah")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 3
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_8kg4m")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]
